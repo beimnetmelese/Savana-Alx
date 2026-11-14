@@ -1,0 +1,19 @@
+{
+  "name": "savanna-alx-host",
+  "version": "1.0.0",
+  "description": "ALX Savanna LMS Host Platform with Meri (መሪ) Multilingual Assistant Plugin",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -p 3000 .",
+    "dev": "npx serve -p 3000 ."
+  },
+  "keywords": [
+    "savanna",
+    "alx",
+    "lms",
+    "meri-plugin",
+    "multilingual-assistant"
+  ],
+  "author": "Beimnet Melese",
+  "license": "MIT"
+}
