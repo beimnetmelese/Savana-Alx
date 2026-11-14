@@ -90,3 +90,4 @@ savanna-host/
 ## 🤝 Connected Repositories
 - **Plugin UI**: [BeimnetTadesse/Meri](https://github.com/BeimnetTadesse/Meri)
 - **Backend API**: BridgeMate FastAPI Context-Aware Engine
+
