@@ -293,13 +293,12 @@
       }
 
       function triggerMeriAccommodations() {
-        const accommodationsBtn = document.querySelector('[title="Request accommodations"]');
-        if (accommodationsBtn) {
-          accommodationsBtn.click();
+        if (window.Meri && typeof window.Meri.open === 'function') {
+          window.Meri.open();
         } else {
-          // Open Meri launcher if closed
-          const launcher = document.querySelector('[aria-label="Open Meri AI Assistant"]');
-          if (launcher) launcher.click();
+          const root = document.getElementById('meri-plugin-root');
+          const btn = root?.shadowRoot?.querySelector('button[aria-label*="Open"]') || document.querySelector('[aria-label*="Open"]');
+          if (btn) btn.click();
         }
       }
     </script>
@@ -308,11 +307,11 @@
     <script src="../config.js"></script>
     <!-- Meri (መሪ) Multilingual AI Assistant Plugin -->
     <script
-      src="https://meri-plugin.vercel.app/meri.js"
+      src="../dist/meri.js"
       data-public-key="pk_live_savanna_sample_12345"
       data-api-base="https://meri-back.onrender.com"
       async
-      onerror="console.warn('CDN meri.js failed to load, falling back to local bundle'); var s = document.createElement('script'); s.src = '../dist/meri.js'; s.setAttribute('data-public-key', 'pk_live_savanna_sample_12345'); s.setAttribute('data-api-base', 'https://meri-back.onrender.com'); s.async = true; document.head.appendChild(s);"
+      onerror="console.warn('Local meri.js failed to load, falling back to CDN bundle'); var s = document.createElement('script'); s.src = 'https://meri-plugin.vercel.app/meri.js'; s.setAttribute('data-public-key', 'pk_live_savanna_sample_12345'); s.setAttribute('data-api-base', 'https://meri-back.onrender.com'); s.async = true; document.head.appendChild(s);"
     ></script>
   </body>
 </html>
